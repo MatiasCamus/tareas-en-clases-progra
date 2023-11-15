@@ -1,0 +1,55 @@
+#ejercicio1
+numero1 = int(input("Ingrese un numero:"))
+factorial = 1
+x = 2
+
+if numero1 == 0:
+    print("No tiene factorial")
+else:
+    while x <= numero1:
+        factorial *= x
+        x+=1
+        print("El numero factorial es: ", factorial)
+
+
+#ejercicio 2
+try:
+     n = int(input("Ingrese la cantidad de términos de la secuencia de Fibonacci que desea ver: "))
+except ValueError:
+    print("Por favor, ingrese un número entero válido.")
+    exit()
+
+if n <= 0:
+    print("Por favor, ingrese un número entero positivo.")
+    exit()
+
+fibonacci_seq = [0, 1]
+
+for _ in range(n - 2):  # Reducimos 2 porque ya tenemos los dos primeros términos
+    siguiente_numero = fibonacci_seq[-1] + fibonacci_seq[-2]
+    fibonacci_seq.append(siguiente_numero)
+
+print(f"\nLos primeros {n} términos de la secuencia de Fibonacci son:")
+print(fibonacci_seq)
+
+
+
+#ejercio 3
+rango1 = int(input("Ingrese el primer nmero de su intervalo"))
+rango2 = int(input("ingrese el ultimo numero de su intervalo"))
+
+numerosprimosactual = 0
+contador = 0
+while contador <= rango2 - rango1:
+    x = rango1 + contador
+    if x > 1:
+        numprimo = 1
+        divisor = 2
+        while divisor * divisor <= x:
+            if x % divisor == 0 :
+                numprimo = 0
+                break
+            divisor += 1
+        numerosprimosactual += numprimo
+    contador += 1
+print("La cantidad de numeros primos en el intervalo es:", numerosprimosactual)
