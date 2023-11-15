@@ -1,0 +1,26 @@
+#ejercicio 1
+#1. Crear un archivo llamado datos.txt.
+#2. Escribir la cadena “Aprendiendo Python” en el archivo.
+#3. Cerrar el archivo y verificar que los datos hayan sido escritos correctamente abriendo el archivo en un editor de texto.
+#4. Abra el archivo anterior y agréguele el string “soy un genio”
+#5. Cerrar el archivo y verificar que los datos hayan sido escritos correctamente abriendo el archivo en un editor de texto.
+with open("datos.txt", "w") as archivo:
+    with open("datos.txt", "a") as archivo:
+        archivo.write("soy un genio")
+
+
+#ejercicio2
+#Abre un archivo de texto llamado “ejemplo.txt” que contenga algunas líneas de texto.
+#Utiliza el método read() para leer todo el contenido y mostrarlo en la pantalla.
+#Luego, utiliza readline() para leer y mostrar las primeras tres líneas del archivo.
+
+with open("ejemplo.txt", "r") as archivo:
+     contenido_completo = archivo.read()
+print("Contenido completo del archivo:")
+print(contenido_completo)
+
+print("\nPrimeras tres líneas del archivo:")
+archivo.seek(0)  # Colocar el puntero al principio del archivo
+for _ in range(3):
+     linea = archivo.readline()
+     print(linea.strip())
