@@ -1,0 +1,11 @@
+#Ejercicio 1 crear una lista con 5 elemntos
+
+mi_lista = [4, 7, 10, -3, 0]
+
+print("La lista es:", mi_lista)
+
+
+#Cree una lista llamada frutas que contenga los siguientes elementos: “manzana”, “plátano”, “cereza”. Luego, imprima el primer y último elemento de la lista.
+frutas = ["manzana", "plátano", "cereza"]
+print("El primer elemento de la lista de frutas es:", frutas[0])
+print("El último elemento de la lista de frutas es:", frutas[-1])
