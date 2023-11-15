@@ -1,0 +1,40 @@
+#Ejercicio 1: Validación de Palíndromos: Un palíndromo es una palabra que se lee igual de izquierda a derecha y de derecha a izquierda. Escribe una función que tome una palabra como entrada y determine si es un palíndromo o no. Ignora los espacios y considera mayúsculas y minúsculas por igual.
+
+palabra = input("Ingrese una palabra para verificar si es un palíndromo: ")
+palabra = palabra.replace(" ", "").lower()
+if palabra == palabra[::-1]:
+    print("¡Es un palíndromo!")
+else:
+    print("No es un palíndromo.")
+
+#Ejercicio 2: Contador de Vocales: Escribe una función que tome un string como entrada y cuente cuántas veces aparecen cada una de las vocales (mayúsculas o minúsculas) en el string.
+
+cadena = input("Ingrese una cadena para contar las vocales: ")
+cadena = cadena.lower()
+
+contador_a = cadena.count('a')
+contador_e = cadena.count('e')
+contador_i = cadena.count('i')
+contador_o = cadena.count('o')
+contador_u = cadena.count('u')
+
+print("Resultados:")
+print(f"a: {contador_a}")
+print(f"e: {contador_e}")
+print(f"i: {contador_i}")
+print(f"o: {contador_o}")
+print(f"u: {contador_u}")
+
+
+#Ejercicio 3: Generador de Contraseñas: Escribe una función que genere contraseñas aleatorias. La función debe aceptar la longitud deseada de la contraseña y puede incluir letras (mayúsculas y minúsculas), números y símbolos.
+
+import random
+import string
+
+longitud_contraseña = int(input("Ingrese la longitud deseada de la contraseña: "))
+
+caracteres_posibles = string.ascii_letters + string.digits + string.punctuation
+
+contraseña_generada = ''.join(random.choice(caracteres_posibles) for _ in range(longitud_contraseña))
+
+print("Contraseña generada:", contraseña_generada)
