@@ -1,0 +1,26 @@
+#ejercicio 1 w08
+#1. Crea un conjunto llamado “invitados” y agrega algunos nombres de invitados.
+#2. Añade un invitado que ya está en la lista.
+#3. Elimina un invitado de la lista.
+#4. Imprime la lista final de invitados sin duplicados.
+
+invitados= set()
+invitados.add("Juan")
+invitados.add("María")
+invitados.add("Carlos")
+invitados.add("Laura")
+invitados.add("Carlos")
+invitados.remove("Juan")
+print("Lista final de invitados:")
+for invitado in invitados:
+    print(invitado)
+
+
+#ejercicio 2
+
+punto = (3, 5)
+
+x = punto[0]
+y = punto[1]
+
+print(f"Las coordenadas del punto son: x = {x}, y = {y}")
