@@ -1,0 +1,71 @@
+#ejercicio 1: Conversión a dólar
+monto_clp = float(input("Ingrese el monto en pesos chilenos: "))
+tasa_cambio = 845
+monto_usd = monto_clp / tasa_cambio
+print("El monto en dólares es:", monto_usd)
+
+
+
+#ejercicio 2: Inversión de números
+numero = int(input("Ingrese un número de tres dígitos: "))
+if 100 <= numero <= 999: 
+    digito_1 = numero // 100 # devuelve la parte entera de la divison
+    digito_2 = (numero % 100) // 10 # devuelve primero solo la parte decimal y luego de eso se divide de nuevo y devuelve la parte entera
+    digito_3 = numero % 10
+    numero_invertido = digito_3 * 100 + digito_2 * 10 + digito_1
+    print(f"El número invertido es: {numero_invertido}")
+else:
+    print("Por favor, ingrese un número de tres dígitos.")
+
+
+
+#ejercicio 3:Repetición
+palabra = input("Ingrese una palabra: ")
+repeticiones = int(input("Ingrese la cantidad de repeticiones: "))
+resultado = palabra * repeticiones
+print(f"El resultado es: {resultado}")
+
+
+#ejercicio 4: Perímetro y área 
+radio = float(input("Ingrese el radio del círculo: "))
+pi=3.14
+area = pi * radio**2
+perimetro = 2 * pi * radio
+print(f"El área del círculo es: {area}")
+print(f"El perímetro del círculo es: {perimetro}")
+
+
+#ejercicio 5: Mascotas
+total_mascotas = 12482679
+perros_con_dueño = 8306650
+gatos_con_dueño = 4176029
+porcentaje_perros = (perros_con_dueño / total_mascotas) * 100
+porcentaje_gatos = (gatos_con_dueño / total_mascotas) * 100
+
+porcentaje_mascotas_con_microchip = 27
+mascotas_con_microchip = (porcentaje_mascotas_con_microchip / 100) * total_mascotas
+mascotas_sin_microchip = total_mascotas - mascotas_con_microchip
+
+print(f"Porcentaje de perros: {porcentaje_perros:.2f}%")
+print(f"Porcentaje de gatos: {porcentaje_gatos:.2f}%")
+
+print(f"\nNúmero de mascotas sin microchip e inscripción: {mascotas_sin_microchip}")
+
+
+
+#ejercicio 6: Hamburguesas 
+precio_clasica = 4600
+precio_italiana = 5500
+precio_vegana = 5000
+
+cantidad_clasica = int(input("Ingrese el número de hamburguesas clásicas: "))
+cantidad_italiana = int(input("Ingrese el número de hamburguesas italianas: "))
+cantidad_vegana = int(input("Ingrese el número de hamburguesas veganas: "))
+
+total_clasica = precio_clasica * cantidad_clasica
+total_italiana = precio_italiana * cantidad_italiana
+total_vegana = precio_vegana * cantidad_vegana
+
+costo_total = total_clasica + total_italiana + total_vegana
+
+print(f"\nCosto total de la compra: ${costo_total}")
