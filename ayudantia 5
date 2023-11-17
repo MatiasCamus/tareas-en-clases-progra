@@ -1,0 +1,105 @@
+#ejercicio 1
+base = int(input("Ingrese el número de caracteres de la base: "))
+altura = int(input("Ingrese el número de caracteres de la altura: "))
+caracter = input("Ingrese el caracter con el que se dibujará el rectángulo (%,&,*): ")
+if caracter not in ['%', '&', '*']:
+    print("Error: El caracter debe ser %, & o *.")
+else:
+    for i in range(altura):
+        for j in range(base):
+            print(caracter, end=' ')
+        print()
+
+
+
+#ejercicio 2
+numero = int(input("Ingrese un número entero: "))
+str_numero = str(numero)# Convertir el número a una cadena para contar las cifras
+
+num_cifras = len(str_numero)# Obtener la cantidad de cifras en el número
+
+suma = sum(int(digito) ** num_cifras for digito in str_numero) #calculo e las cifras
+
+es_armstrong = numero == suma
+
+if es_armstrong:
+    print(f"{numero} es un número de Armstrong.")
+else:
+    print(f"{numero} no es un número de Armstrong.")
+
+
+
+#ejercicio 3
+texto = input("Ingrese un texto: ")
+
+contador_numeros = 0
+contador_letras = 0
+contador_especiales = 0
+contador_espacios = 0
+
+for caracter in texto:
+    if caracter.isdigit():
+        contador_numeros += 1
+    elif caracter.isalpha():
+        contador_letras += 1
+    elif caracter.isspace():
+        contador_espacios += 1
+    else:
+        contador_especiales += 1
+
+print(f"Números={contador_numeros}, Letras={contador_letras}, Caracteres especiales={contador_especiales}, Espacios={contador_espacios}")
+
+
+
+#ejercicio 5
+n = int(input("Ingrese el número de términos (n): "))
+inicio1 = int(input("Ingrese el primer valor inicial: ") or 2)
+inicio2 = int(input("Ingrese el segundo valor inicial: ") or 3)
+
+sucesion = [inicio1, inicio2]
+for i in range(2, n):
+    suma_anteriores = sucesion[i - 2] + sucesion[i - 1]
+    resta_anteriores = sucesion[i - 1] - sucesion[i - 2]
+
+    if resta_anteriores != 0:  # Evitar división por cero
+        cuociente = suma_anteriores / resta_anteriores
+        sucesion.append(cuociente)
+    else:
+        sucesion.append("Indefinido")
+
+print(f"Sucesión de cuociente de suma y resta para n={n} con inicios {inicio1} y {inicio2}:")
+print(sucesion)
+
+
+
+
+#ejercicio 6
+ciudades = []
+
+ciudad1 = ("Nueva York", 40.7128, -74.0060)
+ciudades.append(ciudad1)
+print(f"La ciudad {ciudad1[0]} ha sido agregada con éxito.")
+
+
+ciudad2 = ("Paris", 48.8566, 2.3522)
+ciudades.append(ciudad2)
+print(f"La ciudad {ciudad2[0]} ha sido agregada con éxito.")
+
+ciudad3 = ("Tokio", 35.6895, 139.6917)
+ciudades.append(ciudad3)
+print(f"La ciudad {ciudad3[0]} ha sido agregada con éxito.")
+
+print("\nLista de Ciudades:")
+for ciudad in ciudades:
+    print(f"{ciudad[0]} - Latitud: {ciudad[1]}, Longitud: {ciudad[2]}")
+
+nombre_buscar = input("\nIngrese el nombre de la ciudad a buscar: ")
+encontrada = False
+
+for ciudad in ciudades:
+    if ciudad[0] == nombre_buscar:
+        print(f"Coordenadas de {nombre_buscar}: Latitud {ciudad[1]}, Longitud {ciudad[2]}")
+        encontrada = True
+
+if not encontrada:
+    print(f"No se encontró la ciudad con el nombre {nombre_buscar}.")
