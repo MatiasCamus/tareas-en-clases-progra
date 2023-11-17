@@ -1,0 +1,48 @@
+#ejercico 1
+import random
+temperatura_inicial = random.randint(18, 25)
+print(f"La temperatura inicial del agua es: {temperatura_inicial}°C")
+while temperatura_inicial < 93:
+    temperatura_inicial += 2
+    print(f"La temperatura actual es: {temperatura_inicial}°C")
+print("El agua está en la temperatura óptima para preparar café (94°C).")
+
+
+#ejercicio 2
+costo_mensual = float(input("Ingrese el costo mensual del plan en CLP: "))
+costo_total_anual = 0 #se inicia en 0 para despues somar todos los costos 
+
+for mes in range(1, 13):
+    if mes == 3 or mes == 9:
+        costo_total_anual += costo_mensual + 1700
+    else:
+        costo_total_anual += costo_mensual
+print(f"\nEl costo total anual del plan es: {costo_total_anual} pesos chilenos.")
+
+
+
+
+#ejercicio 3
+x = int(input("Ingrese un número entero: "))
+while x != 1:
+    print(x, end=' ')
+    if x % 2 == 0:
+        x = x // 2
+    else:
+        x = 3 * x + 1
+
+print(1)
+
+
+
+#ejercicio 4
+nombre_usuario = input("Ingrese su nombre de usuario: ")
+email = input("Ingrese su e-mail: ")
+contrasena = input("Ingrese su contraseña: ")
+if nombre_usuario == email.split('@')[0]:
+    print("Error: El nombre de usuario no puede ser igual al nombre antes del @ en el e-mail.")
+    exit()
+    if len(contrasena) < 8 or not any(char.isdigit() for char in contrasena) or any(char in '$#%&/' for char in contrasena):
+        print("Error: La contraseña no cumple con los requisitos.")
+    exit()
+print("Registro exitoso.")
