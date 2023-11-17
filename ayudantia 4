@@ -1,0 +1,60 @@
+#ejercicio1
+import random
+n = int(input("Ingrese el número n: ")) # n es la cantidad de numeros que generara aleatoreamente en la lista 
+k = int(input("Ingrese el número k (entre 1 y 100): ")) # k es el punto limite para dividir las listas en menor a k o mayor a k 
+if not (1 <= k <= 100):
+    print("Error: El valor de k debe estar entre 1 y 100.")
+    exit()
+
+lista_numeros = [random.randint(1, 100) for _ in range(n)]
+sublista_menor_o_igual_a_k = [num for num in lista_numeros if num <= k]
+sublista_mayor_a_k = [num for num in lista_numeros if num > k]
+print(f"\nLista generada: {lista_numeros}")
+print(f"Sublista con números menores o iguales a {k}: {sublista_menor_o_igual_a_k}")
+print(f"Sublista con números mayores a {k}: {sublista_mayor_a_k}")
+
+
+
+#ejercicio2
+entrada_usuario = input("Ingrese una lista de strings separados por espacio: ")
+lista_strings = entrada_usuario.split()
+contador = 0
+for cadena in lista_strings:
+    if len(cadena) >= 2 and cadena[0] == cadena[-1]:
+        contador += 1
+
+print(f"El número de elementos con longitud >= 2 y primer y último caracter iguales es: {contador}")
+
+
+
+#ejercicio 3
+import random
+lista_original = input("Ingrese una lista de strings separados por espacio: ").split()
+
+n = len(lista_original)
+k = random.randint(1, n)
+lista_nueva = [s + str(k) for s in lista_original]
+
+print(f"\nLista original: {lista_original}")
+print(f"Lista nueva: {lista_nueva}")
+
+
+#ejercicio 4
+
+
+#ejercicio 5
+xv = ['Celular', 'Gopro', 100, 'Tablet', 310.28, 'Parlantes', 27.00, 'Smart TV', 1000, 'Flash']
+lista_strings = sorted([elem for elem in xv if isinstance(elem, str)])
+lista_numeros = sorted([elem for elem in xv if isinstance(elem, (int, float))], reverse=True)
+print(f"\nLista de strings ordenada alfabéticamente: {lista_strings}")
+print(f"Lista de números ordenada en forma descendente: {lista_numeros}")
+
+
+#ejercicio 6
+virus = ['infectado', 'contagio', 'bicho', 'malware', 'maluco']
+texto_original = "Este es un texto infectado con malware y maluco."
+for secuencia in virus:
+    if secuencia in texto_original:
+         texto_original = texto_original.replace(secuencia, '')
+    print(f"Texto libre de virus: {texto_original}")
+print("\nTexto original:", texto_original)
